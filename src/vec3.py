@@ -41,7 +41,8 @@ class Vec3:
         return Vec3(self.x / v, self.y / v, self.z / v)
 
     def __iadd__(self, v): # v is another Vec3 type
-        assert isinstance(v, Vec3), "Needs to be a Vec3 object"
+        if not isinstance(v, Vec3):
+            raise TypeError("unsupported type '{}' for op: +=, needs Vec3".format(type(v)))
         self.x += v.x
         self.y += v.y
         self.z += v.z
@@ -83,3 +84,6 @@ def dot(v1, v2):
 
 def cross(v1, v2):
     return Vec3(v1.y*v2.z - v1.z*v2.y, v1.z*v2.x - v1.x * v2.z, v1.x*v2.y - v1.y*v2.x) 
+
+def unit_vector(v):
+    return v / v.length()
