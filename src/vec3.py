@@ -71,7 +71,7 @@ class Vec3:
         return self.x**2 + self.y**2 + self.z**2
 
     def write_colour(self):
-        return "{} {} {}\n".format(int(255.99 * self.x), int(255.99 * self.y), int(255.99 * self.z))
+        return "{} {} {}".format(int(255.99 * self.x), int(255.99 * self.y), int(255.99 * self.z))
 
     def dot(self, v):
         return dot(self, v)
