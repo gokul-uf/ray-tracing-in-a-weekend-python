@@ -1,5 +1,7 @@
 # Code that creates a simple PPM file with colour gradient
 
+from tqdm import tqdm
+
 image_width = 200
 image_height = 100
 
@@ -9,7 +11,7 @@ if __name__ == "__main__":
         f.write("{} {}\n".format(image_width, image_height))
         f.write("255\n")
 
-        for j in range(image_height-1, -1, -1):
+        for j in tqdm(range(image_height-1, -1, -1)):
             for i in range(image_width):
                 r = i / image_width
                 g = j / image_height
