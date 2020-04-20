@@ -31,10 +31,9 @@ def ray_color(r, start_color = None, end_color = None):
 
 def ray_color_sphere(r, start_color = None, end_color = None, 
         sphere_center = None, radius = 0.5, hit_color=None):
-    # In addition to the gradient as done in ray_color, this also checks if 
-    # the ray hits a sphere at center `c` and radius `radius` or not.
-    # If it does, output `hit_color`. The defaults for these are as per the notes
-    # in notes/4-sphere.md
+    # This checks if the ray hits a sphere at center `c` and radius `radius` or not.
+    # If it does, output `hit_color`, if not just display background gradient.
+    # The defaults for radius and sphere_center are as per notes/4-sphere.md
 
     if not isinstance(r, Ray):
         raise TypeError("Expected 'Ray' object, got {}".format(type(r)))
@@ -45,13 +44,4 @@ def ray_color_sphere(r, start_color = None, end_color = None,
     if hit_sphere(sphere_center, radius, r): # It's a hit!
         return hit_color
 
-    unit_direction = unit_vector(r.direction)
-
-    start_color = start_color if start_color is not None else Vec3(1, 1, 1) # White
-    end_color = end_color if end_color is not None else Vec3(0.5, 0.7, 1.) # Blue
-
-    # scale [-1, 1] to [0, 1]
-    t = 0.5*(unit_direction.y + 1.0)
-
-    # do the linear interpolation from start to end color
-    return (1. - t)*start_color + t*end_color
+    return ray_color(r, start_color, end_color)
