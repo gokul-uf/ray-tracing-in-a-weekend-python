@@ -4,7 +4,7 @@ Ray is defined as following
 
 Based on the values of `t`, you can move along the ray `p(t)`. Positive values of `t` lets you move along the direction of `b` and negative values in the opposite direction.
 
-See `src.ray.py` for an implementation.
+See `src/ray.py` for an implementation.
 
 ## Simple Ray Tracer
 Sends rays through pixels and computes the colour seen in the direction of those rays.
@@ -58,7 +58,7 @@ The borders of the scene are as follows (in counter-clockwise direction):
 * See: [here](https://raytracing.github.io/images/fig.cam-geom.jpg) for an image of the above setup.  
 
 * The image will be traversed from bottom left using two offset vectors to the top right endpoint
-* see `src/2-gradient-background.py` for implementation.
+* see `src/4-rays-camera-n-background/main.py` for implementation.
 
 
 

@@ -39,7 +39,3 @@ So we will leverage the previous `ray_color` method and display the gradient onl
 The code for whether the sphere is hit or not is at: `src/sphere_utils.py:hit_sphere`.
 And the entire tracer is at: `src/ray.py:ray_color_sphere`
 
-
-
-
-
