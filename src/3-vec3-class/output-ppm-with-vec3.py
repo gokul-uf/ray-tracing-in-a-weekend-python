@@ -7,7 +7,7 @@ image_width = 200
 image_height = 100
 
 if __name__ == "__main__":
-    with open("outputs/1-simple_image.ppm", "w") as f:
+    with open("../outputs/1-simple_image.ppm", "w") as f:
         f.write("P3\n")
         f.write("{} {}\n".format(image_width, image_height))
         f.write("255\n")
